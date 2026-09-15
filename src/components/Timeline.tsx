@@ -8,7 +8,7 @@ export const Timeline: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-24">
-          <span className="font-serif tracking-[0.25em] text-xs uppercase text-[#F3B99A] font-normal block mb-2">
+          <span className="font-serif tracking-[0.25em] text-xs uppercase text-[#DF806E] font-bold block mb-2">
             COMO TUDO ACONTECEU
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#3E483D] font-normal tracking-tight mb-4">

@@ -42,10 +42,6 @@ export const PhotoMarquee: React.FC = () => {
   return (
     <section className="py-8 sm:py-12 bg-[#F7F2E9] overflow-hidden border-t border-[#7F9078]/15">
       <div className="relative w-full overflow-hidden">
-        {/* Soft edge gradient fades */}
-        <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-[#F7F2E9] to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-[#F7F2E9] to-transparent z-10 pointer-events-none" />
-
         {/* Marquee Track sliding to the right */}
         <div className="animate-slide-marquee flex gap-4 sm:gap-6 items-center">
           {marqueeList.map((photo, index) => (
