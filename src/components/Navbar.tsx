@@ -27,7 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
   const navItems = [
     { label: 'NOSSA HISTÓRIA', href: '#nossa-historia' },
     { label: 'O EVENTO', href: '#o-evento' },
-    { label: 'PROGRAMAÇÃO', href: '#programacao' },
+    { label: 'CRONOGRAMA', href: '#programacao' },
     { label: 'DRESS CODE', href: '#dress-code' },
     { label: 'PRESENTES', href: '#presentes' },
     { label: 'CONFIRMAR', href: '#confirmar-presenca' },
@@ -50,14 +50,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
-        {/* Left Monogram */}
+        {/* Monogram / Logo */}
         <a
           href="#topo"
           onClick={(e) => handleLinkClick(e, '#topo')}
-          className="flex items-center group cursor-pointer"
+          className="flex items-center group cursor-pointer mr-3 md:mr-6 lg:mr-8 shrink-0"
           aria-label="Ir para o topo"
         >
-          <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#7F9078]/40 flex items-center justify-center bg-white/80 shadow-xs group-hover:border-[#7F9078] group-hover:bg-white transition-all p-1 overflow-hidden">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full border border-[#7F9078]/40 flex items-center justify-center bg-white/80 shadow-xs group-hover:border-[#7F9078] group-hover:bg-white transition-all p-1 overflow-hidden">
             <img
               src="/monograma.png"
               alt="Monograma Gabriela e Carlos"
@@ -66,14 +66,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
           </div>
         </a>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+        {/* Desktop & Tablet Navigation Links */}
+        <nav className="hidden md:flex items-center gap-3 md:gap-3.5 lg:gap-7 xl:gap-8 shrink-0">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={(e) => handleLinkClick(e, item.href)}
-              className="text-[12px] lg:text-[13px] tracking-[0.18em] font-normal text-[#3E483D] hover:text-[#7F9078] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#7F9078] hover:after:w-full after:transition-all after:duration-300"
+              className="text-[11px] md:text-[11.5px] lg:text-[13px] tracking-[0.08em] md:tracking-[0.10em] lg:tracking-[0.18em] font-normal text-[#3E483D] hover:text-[#7F9078] transition-colors py-1 whitespace-nowrap relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#7F9078] hover:after:w-full after:transition-all after:duration-300"
             >
               {item.label}
             </a>

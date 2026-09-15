@@ -133,37 +133,37 @@ export const RsvpSection: React.FC = () => {
             Confirmar Presença
           </h2>
           <div className="w-12 h-[1px] bg-[#7F9078]/40 mx-auto mb-4" />
-          <p className="font-serif italic text-base sm:text-lg text-[#505F4E] font-light leading-relaxed">
+          <p className="font-serif italic text-base sm:text-lg text-[#2B332A] font-light leading-relaxed">
             Ficaremos muito felizes em celebrar com você! Por favor, confirme sua presença até 05 de julho de 2027.
           </p>
         </div>
 
         {/* Guest Restriction Notice Banner */}
-        <div className="mb-8 p-4 rounded-2xl bg-white/80 border border-[#7F9078]/25 shadow-xs flex items-center gap-3 text-xs sm:text-sm text-[#505F4E]">
+        <div className="mb-8 p-4 rounded-2xl bg-white/80 border border-[#7F9078]/25 shadow-xs flex items-center gap-3 text-xs sm:text-sm text-[#2B332A]">
           <ShieldCheck className="w-5 h-5 text-[#7F9078] shrink-0" />
           <span>
-            <span className="text-[#3E483D]">Confirmação individual:</span> Por favor, informe o número de acompanhantes indicado no seu convite.
+            <span className="text-[#3E483D] font-medium">Confirmação individual:</span> Por favor, informe o número de acompanhantes indicado no seu convite.
           </span>
         </div>
 
         {/* Card Form */}
-        <div className="bg-white rounded-3xl border border-[#7F9078]/20 shadow-md p-6 sm:p-10 md:p-12">
+        <div className="bg-[#EAF2EC] rounded-3xl border border-[#7F9078]/25 shadow-md p-6 sm:p-10 md:p-12">
           {submitted ? (
             <div className="text-center py-8 space-y-4 animate-fadeIn">
-              <div className="w-16 h-16 rounded-full bg-[#A8C3AE]/25 border border-[#A8C3AE] flex items-center justify-center mx-auto text-[#505F4E]">
+              <div className="w-16 h-16 rounded-full bg-white/80 border border-[#7F9078]/30 flex items-center justify-center mx-auto text-[#2B332A]">
                 <CheckCircle2 className="w-10 h-10 text-[#7F9078]" />
               </div>
               <h3 className="font-serif text-3xl text-[#3E483D] font-normal">
                 Presença Registrada!
               </h3>
-              <p className="font-serif text-base sm:text-lg text-[#505F4E] max-w-md mx-auto leading-relaxed font-normal">
+              <p className="font-serif text-base sm:text-lg text-[#2B332A] max-w-md mx-auto leading-relaxed font-normal">
                 {attending === 'yes' ? (
                   <>
-                    Muito obrigado, <span className="text-[#3E483D]">{fullName}</span>! Sua presença foi confirmada e registrada com sucesso na lista oficial dos noivos.
+                    Muito obrigado, <span className="text-[#3E483D] font-medium">{fullName}</span>! Sua presença foi confirmada e registrada com sucesso na lista oficial dos noivos.
                   </>
                 ) : (
                   <>
-                    Muito obrigado por nos avisar, <span className="text-[#3E483D]">{fullName}</span>! Sua resposta foi registrada na lista do casamento. Sentiremos sua falta!
+                    Muito obrigado por nos avisar, <span className="text-[#3E483D] font-medium">{fullName}</span>! Sua resposta foi registrada na lista do casamento. Sentiremos sua falta!
                   </>
                 )}
               </p>
@@ -171,7 +171,7 @@ export const RsvpSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="px-6 py-2.5 rounded-full border border-[#7F9078]/30 text-xs uppercase tracking-wider text-[#505F4E] hover:bg-[#FAF7F0] transition-colors cursor-pointer"
+                  className="px-6 py-2.5 rounded-full border border-[#7F9078]/30 bg-white text-xs uppercase tracking-wider text-[#2B332A] hover:bg-[#FAF7F0] transition-colors cursor-pointer"
                 >
                   Enviar outra confirmação
                 </button>
@@ -201,7 +201,7 @@ export const RsvpSection: React.FC = () => {
               <div>
                 <label
                   htmlFor="rsvp-full-name"
-                  className="block text-xs font-normal uppercase tracking-wider text-[#505F4E] mb-2"
+                  className="block text-xs font-normal uppercase tracking-wider text-[#2B332A] mb-2"
                 >
                   NOME COMPLETO *
                 </label>
@@ -213,13 +213,13 @@ export const RsvpSection: React.FC = () => {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="Seu nome e sobrenome"
-                  className="w-full px-4 py-3.5 rounded-xl bg-[#FAF7F0]/60 border border-[#7F9078]/30 focus:border-[#7F9078] focus:bg-white focus:ring-2 focus:ring-[#7F9078]/20 outline-hidden text-sm text-[#3E483D] placeholder-[#505F4E]/50 transition-all font-normal"
+                  className="w-full px-4 py-3.5 rounded-xl bg-white border border-[#7F9078]/30 focus:border-[#7F9078] focus:ring-2 focus:ring-[#7F9078]/20 outline-hidden text-sm text-[#3E483D] placeholder-[#2B332A]/50 transition-all font-normal shadow-2xs"
                 />
               </div>
 
               {/* Attendance Toggle */}
               <div>
-                <label className="block text-xs font-normal uppercase tracking-wider text-[#505F4E] mb-2">
+                <label className="block text-xs font-normal uppercase tracking-wider text-[#2B332A] mb-2">
                   VOCÊ PODERÁ COMPARECER? *
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -229,7 +229,7 @@ export const RsvpSection: React.FC = () => {
                     className={`py-3.5 px-4 rounded-xl border text-xs sm:text-sm font-normal tracking-wide flex items-center justify-center gap-2 transition-all cursor-pointer ${
                       attending === 'yes'
                         ? 'bg-[#7F9078] text-white border-[#7F9078] shadow-xs'
-                        : 'bg-[#FAF7F0]/40 text-[#505F4E] border-[#7F9078]/25 hover:bg-white'
+                        : 'bg-white text-[#2B332A] border-[#7F9078]/30 hover:border-[#7F9078]'
                     }`}
                   >
                     <CheckCircle2 className="w-4 h-4" />
@@ -242,7 +242,7 @@ export const RsvpSection: React.FC = () => {
                     className={`py-3.5 px-4 rounded-xl border text-xs sm:text-sm font-normal tracking-wide flex items-center justify-center gap-2 transition-all cursor-pointer ${
                       attending === 'no'
                         ? 'bg-[#505F4E] text-white border-[#505F4E] shadow-xs'
-                        : 'bg-[#FAF7F0]/40 text-[#505F4E] border-[#7F9078]/25 hover:bg-white'
+                        : 'bg-white text-[#2B332A] border-[#7F9078]/30 hover:border-[#7F9078]'
                     }`}
                   >
                     <span>Não poderei ir</span>
@@ -255,17 +255,17 @@ export const RsvpSection: React.FC = () => {
                 <div className="space-y-6">
                   <div>
                     <div className="mb-2">
-                      <label className="text-xs font-normal uppercase tracking-wider text-[#505F4E]">
+                      <label className="text-xs font-normal uppercase tracking-wider text-[#2B332A]">
                         QUANTIDADE DE ACOMPANHANTES
                       </label>
                     </div>
 
-                    <div className="flex items-center justify-between p-3 rounded-xl bg-[#FAF7F0]/60 border border-[#7F9078]/30">
+                    <div className="flex items-center justify-between p-3 rounded-xl bg-white border border-[#7F9078]/30 shadow-2xs">
                       <button
                         type="button"
                         onClick={() => handleGuestCountChange(Math.max(0, guestCount - 1))}
                         disabled={guestCount === 0}
-                        className="w-10 h-10 rounded-lg bg-white border border-[#7F9078]/30 flex items-center justify-center text-[#505F4E] disabled:opacity-40 hover:bg-[#FAF7F0] transition-colors cursor-pointer"
+                        className="w-10 h-10 rounded-lg bg-[#EAF2EC] border border-[#7F9078]/30 flex items-center justify-center text-[#2B332A] disabled:opacity-40 hover:bg-[#dce9df] transition-colors cursor-pointer"
                         aria-label="Diminuir acompanhantes"
                       >
                         <Minus className="w-4 h-4" />
@@ -279,7 +279,7 @@ export const RsvpSection: React.FC = () => {
                         type="button"
                         onClick={() => handleGuestCountChange(Math.min(5, guestCount + 1))}
                         disabled={guestCount >= 5}
-                        className="w-10 h-10 rounded-lg bg-white border border-[#7F9078]/30 flex items-center justify-center text-[#505F4E] disabled:opacity-40 hover:bg-[#FAF7F0] transition-colors cursor-pointer"
+                        className="w-10 h-10 rounded-lg bg-[#EAF2EC] border border-[#7F9078]/30 flex items-center justify-center text-[#2B332A] disabled:opacity-40 hover:bg-[#dce9df] transition-colors cursor-pointer"
                         aria-label="Aumentar acompanhantes"
                       >
                         <Plus className="w-4 h-4" />
@@ -291,7 +291,7 @@ export const RsvpSection: React.FC = () => {
                   {guestCount > 0 && (
                     <div className="space-y-4 pt-1">
                       <div className="flex items-center justify-between">
-                        <label className="block text-xs font-normal uppercase tracking-wider text-[#505F4E]">
+                        <label className="block text-xs font-normal uppercase tracking-wider text-[#2B332A]">
                           {guestCount === 1 ? 'NOME DO ACOMPANHANTE *' : 'NOMES DOS ACOMPANHANTES *'}
                         </label>
                         <span className="text-xs text-[#7F9078] font-normal">
@@ -305,7 +305,7 @@ export const RsvpSection: React.FC = () => {
                             {guestCount > 1 && (
                               <label
                                 htmlFor={`rsvp-companion-${index}`}
-                                className="block text-xs text-[#505F4E] font-medium"
+                                className="block text-xs text-[#2B332A] font-medium"
                               >
                                 {index + 1}º Acompanhante
                               </label>
@@ -321,7 +321,7 @@ export const RsvpSection: React.FC = () => {
                                   ? 'Nome completo do acompanhante'
                                   : `Nome completo do ${index + 1}º acompanhante`
                               }
-                              className="w-full px-4 py-3.5 rounded-xl bg-[#FAF7F0]/60 border border-[#7F9078]/30 focus:border-[#7F9078] focus:bg-white focus:ring-2 focus:ring-[#7F9078]/20 outline-hidden text-sm text-[#3E483D] placeholder-[#505F4E]/50 transition-all font-normal"
+                              className="w-full px-4 py-3.5 rounded-xl bg-white border border-[#7F9078]/30 focus:border-[#7F9078] focus:ring-2 focus:ring-[#7F9078]/20 outline-hidden text-sm text-[#3E483D] placeholder-[#2B332A]/50 transition-all font-normal shadow-2xs"
                             />
                           </div>
                         ))}
@@ -335,7 +335,7 @@ export const RsvpSection: React.FC = () => {
               <div>
                 <label
                   htmlFor="rsvp-message"
-                  className="block text-xs font-normal uppercase tracking-wider text-[#505F4E] mb-2"
+                  className="block text-xs font-normal uppercase tracking-wider text-[#2B332A] mb-2"
                 >
                   RECADO PARA OS NOIVOS (OPCIONAL)
                 </label>
@@ -346,7 +346,7 @@ export const RsvpSection: React.FC = () => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Deixe um carinho para Gabriela e Carlos..."
-                  className="w-full px-4 py-3 rounded-xl bg-[#FAF7F0]/60 border border-[#7F9078]/30 focus:border-[#7F9078] focus:bg-white focus:ring-2 focus:ring-[#7F9078]/20 outline-hidden text-sm text-[#3E483D] placeholder-[#505F4E]/50 transition-all resize-none font-normal"
+                  className="w-full px-4 py-3 rounded-xl bg-white border border-[#7F9078]/30 focus:border-[#7F9078] focus:ring-2 focus:ring-[#7F9078]/20 outline-hidden text-sm text-[#3E483D] placeholder-[#2B332A]/50 transition-all resize-none font-normal shadow-2xs"
                 />
               </div>
 
@@ -362,7 +362,7 @@ export const RsvpSection: React.FC = () => {
               </button>
 
               {/* Submission Note */}
-              <p className="text-center text-[11px] text-[#505F4E]/80 mt-2 font-normal">
+              <p className="text-center text-[11px] text-[#2B332A]/85 mt-2 font-normal">
                 Ao clicar em enviar, sua confirmação será registrada diretamente na lista oficial dos noivos.
               </p>
             </form>

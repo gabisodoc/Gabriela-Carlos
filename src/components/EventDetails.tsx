@@ -18,7 +18,7 @@ export const EventDetails: React.FC = () => {
             O Evento
           </h2>
           <div className="w-12 h-[1px] bg-[#7F9078]/40 mx-auto mb-4" />
-          <p className="font-serif italic text-base sm:text-lg text-[#505F4E] font-light">
+          <p className="font-serif italic text-base sm:text-lg text-[#2B332A] font-light">
             Será uma tarde para celebrar o amor com quem amamos. Anote na agenda e venha comemorar conosco.
           </p>
         </div>
@@ -42,7 +42,7 @@ export const EventDetails: React.FC = () => {
               <p className="font-serif text-lg sm:text-xl text-[#DF806E] font-medium mt-1">
                 às 14h30
               </p>
-              <span className="text-xs text-[#505F4E]/80 mt-1 font-light">
+              <span className="text-xs text-[#2B332A]/85 mt-1 font-normal">
                 Domingo à tarde
               </span>
             </div>
@@ -58,7 +58,7 @@ export const EventDetails: React.FC = () => {
                 />
               </div>
               <span className="text-[11px] font-serif uppercase tracking-[0.2em] text-[#7F9078] font-normal mt-2.5">
-                NOSSO CENÁRIO
+              
               </span>
             </div>
 
@@ -73,7 +73,7 @@ export const EventDetails: React.FC = () => {
               <p className="font-serif text-xl sm:text-2xl text-[#3E483D] font-normal">
                 Sítio Dois Lagos
               </p>
-              <span className="text-xs text-[#505F4E]/80 mt-1 font-light">
+              <span className="text-xs text-[#2B332A]/85 mt-1 font-normal">
                 Mairiporã — São Paulo
               </span>
             </div>
@@ -82,7 +82,7 @@ export const EventDetails: React.FC = () => {
 
           {/* Full Address Bar */}
           <div className="pt-8 border-t border-[#7F9078]/15 text-center flex flex-col items-center">
-            <p className="font-serif text-base sm:text-lg text-[#505F4E] max-w-xl mx-auto mb-6 leading-relaxed font-normal">
+            <p className="font-serif text-base sm:text-lg text-[#2B332A] max-w-xl mx-auto mb-6 leading-relaxed font-normal">
               {address}
             </p>
 

@@ -61,7 +61,7 @@ export const WelcomeCountdown: React.FC = () => {
         {/* Countdown Timer Capsules (antes do texto de bem-vindos) */}
         <div className="grid grid-cols-4 gap-3 sm:gap-4 max-w-md sm:max-w-lg w-full mb-10 sm:mb-12">
           {/* Days */}
-          <div className="bg-[#FAF7F0] border border-[#7F9078]/20 rounded-2xl p-3 sm:p-4 text-center shadow-xs transition-transform hover:-translate-y-1 duration-300">
+          <div className="bg-[#EAF2EC] border border-[#7F9078]/25 rounded-2xl p-3 sm:p-4 text-center shadow-xs transition-transform hover:-translate-y-1 duration-300">
             <span className="block font-serif text-2xl sm:text-3xl md:text-4xl font-normal text-[#3E483D] tracking-tight">
               {String(timeLeft.days).padStart(2, '0')}
             </span>
@@ -71,7 +71,7 @@ export const WelcomeCountdown: React.FC = () => {
           </div>
 
           {/* Hours */}
-          <div className="bg-[#FAF7F0] border border-[#7F9078]/20 rounded-2xl p-3 sm:p-4 text-center shadow-xs transition-transform hover:-translate-y-1 duration-300">
+          <div className="bg-[#EAF2EC] border border-[#7F9078]/25 rounded-2xl p-3 sm:p-4 text-center shadow-xs transition-transform hover:-translate-y-1 duration-300">
             <span className="block font-serif text-2xl sm:text-3xl md:text-4xl font-normal text-[#3E483D] tracking-tight">
               {String(timeLeft.hours).padStart(2, '0')}
             </span>
@@ -81,7 +81,7 @@ export const WelcomeCountdown: React.FC = () => {
           </div>
 
           {/* Minutes */}
-          <div className="bg-[#FAF7F0] border border-[#7F9078]/20 rounded-2xl p-3 sm:p-4 text-center shadow-xs transition-transform hover:-translate-y-1 duration-300">
+          <div className="bg-[#EAF2EC] border border-[#7F9078]/25 rounded-2xl p-3 sm:p-4 text-center shadow-xs transition-transform hover:-translate-y-1 duration-300">
             <span className="block font-serif text-2xl sm:text-3xl md:text-4xl font-normal text-[#3E483D] tracking-tight">
               {String(timeLeft.minutes).padStart(2, '0')}
             </span>
@@ -91,7 +91,7 @@ export const WelcomeCountdown: React.FC = () => {
           </div>
 
           {/* Seconds */}
-          <div className="bg-[#FAF7F0] border border-[#7F9078]/20 rounded-2xl p-3 sm:p-4 text-center shadow-xs transition-transform hover:-translate-y-1 duration-300">
+          <div className="bg-[#EAF2EC] border border-[#7F9078]/25 rounded-2xl p-3 sm:p-4 text-center shadow-xs transition-transform hover:-translate-y-1 duration-300">
             <span className="block font-serif text-2xl sm:text-3xl md:text-4xl font-normal text-[#DF806E] tracking-tight">
               {String(timeLeft.seconds).padStart(2, '0')}
             </span>
@@ -102,7 +102,7 @@ export const WelcomeCountdown: React.FC = () => {
         </div>
 
         {/* Welcome Message */}
-        <p className="font-serif italic text-base sm:text-lg text-[#505F4E] font-light leading-relaxed max-w-2xl mx-auto">
+        <p className="font-serif italic text-base sm:text-lg text-[#2B332A] font-light leading-relaxed max-w-2xl mx-auto">
           Sejam bem-vindos ao nosso site de casamento. Aqui vocês encontram tudo sobre o nosso grande dia, do horário da cerimônia ao caminho até a festa!
         </p>
 

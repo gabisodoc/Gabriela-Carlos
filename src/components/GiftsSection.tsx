@@ -40,7 +40,7 @@ export const GiftsSection: React.FC = () => {
           <div className="w-12 h-[1px] bg-[#7F9078]/40 mx-auto mb-5" />
           
           {/* Explicativo inicial sutil e carinhoso */}
-          <p className="font-serif italic text-lg sm:text-xl text-[#505F4E] font-light leading-relaxed">
+          <p className="font-serif italic text-lg sm:text-xl text-[#2B332A] font-light leading-relaxed">
             Sua presença é o nosso maior presente! Mas, se quiser nos abençoar com um mimo para a nossa Lua de Mel, preparamos algumas opções simbólicas.
           </p>
         </div>

@@ -62,7 +62,7 @@ export const ScheduleSection: React.FC = () => {
             Programação do Nosso Grande Dia
           </h2>
           <div className="w-12 h-[1px] bg-[#7F9078]/40 mx-auto mb-4" />
-          <p className="font-serif italic text-base sm:text-lg text-[#505F4E] font-light">
+          <p className="font-serif italic text-base sm:text-lg text-[#2B332A] font-light">
             Cada detalhe pensado com carinho para vivermos momentos inesquecíveis juntos.
           </p>
         </div>
@@ -85,12 +85,12 @@ export const ScheduleSection: React.FC = () => {
                 >
                   {/* Timeline Pin Indicator */}
                   <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white border border-[#7F9078]/30 shadow-xs flex items-center justify-center z-10">
-                    <div className="w-8 h-8 rounded-full bg-[#FAF7F0] flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-[#EAF2EC] flex items-center justify-center">
                       {event.icon}
                     </div>
                   </div>
 
-                  {/* Content Card */}
+                  {/* Content Card (Balão de informação do cronograma) */}
                   <div
                     className={`ml-14 md:ml-0 md:w-1/2 ${
                       isEven
@@ -98,7 +98,7 @@ export const ScheduleSection: React.FC = () => {
                         : 'md:pr-10 lg:pr-14 md:text-right text-left'
                     }`}
                   >
-                    <div className="bg-[#FAF7F0]/90 border border-[#7F9078]/20 rounded-2xl p-5 sm:p-6 shadow-xs hover:border-[#7F9078]/40 transition-all duration-300">
+                    <div className="bg-[#EAF2EC] border border-[#7F9078]/25 rounded-2xl p-5 sm:p-6 shadow-xs hover:border-[#7F9078]/40 hover:shadow-sm transition-all duration-300">
                       <div
                         className={`flex items-center gap-2 mb-2 ${
                           isEven ? 'justify-start' : 'md:justify-end justify-start'
@@ -113,7 +113,7 @@ export const ScheduleSection: React.FC = () => {
                         {event.title}
                       </h3>
 
-                      <p className="font-serif text-sm sm:text-base text-[#505F4E] font-light leading-relaxed">
+                      <p className="font-serif text-sm sm:text-base text-[#2B332A] font-normal leading-relaxed">
                         {event.description}
                       </p>
                     </div>

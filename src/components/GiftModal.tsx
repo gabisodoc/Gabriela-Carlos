@@ -82,10 +82,10 @@ export const GiftModal: React.FC<GiftModalProps> = ({ gift, onClose }) => {
         {/* ============================================================ */}
         <div className="space-y-5">
           {/* Aviso de Pix Direto */}
-          <div className="flex items-center gap-2.5 p-3 rounded-xl bg-[#A8C3AE]/20 border border-[#A8C3AE]/40 text-xs font-serif text-[#505F4E]">
+          <div className="flex items-center gap-2.5 p-3 rounded-xl bg-[#A8C3AE]/20 border border-[#A8C3AE]/40 text-xs font-serif text-[#2B332A]">
             <ShieldCheck className="w-5 h-5 text-[#7F9078] shrink-0" />
             <span>
-              <span className="text-[#3E483D]">Pix Direto sem intermediários:</span> O valor cai diretamente na conta da noiva, sem taxas.
+              <span className="text-[#3E483D] font-medium">Pix Direto sem intermediários:</span> O valor cai diretamente na conta da noiva, sem taxas.
             </span>
           </div>
 
@@ -98,7 +98,7 @@ export const GiftModal: React.FC<GiftModalProps> = ({ gift, onClose }) => {
                 className="w-48 h-auto sm:w-56 object-contain rounded-lg"
               />
             </div>
-            <span className="font-serif text-xs text-[#505F4E] mt-2.5 font-normal">
+            <span className="font-serif text-xs text-[#2B332A] mt-2.5 font-normal">
               Abra o app do seu banco e aponte a câmera para o QR Code
             </span>
           </div>
@@ -106,7 +106,7 @@ export const GiftModal: React.FC<GiftModalProps> = ({ gift, onClose }) => {
           {/* A Chave Pix do casal */}
           <div>
             <div className="flex items-center justify-between mb-1.5">
-              <label className="text-xs font-serif font-normal uppercase tracking-wider text-[#505F4E]">
+              <label className="text-xs font-serif font-normal uppercase tracking-wider text-[#2B332A]">
                 Chave Pix (Copia e Cola)
               </label>
               <span className="text-xs font-serif text-[#7F9078]">Qualquer banco</span>
@@ -144,13 +144,13 @@ export const GiftModal: React.FC<GiftModalProps> = ({ gift, onClose }) => {
           </button>
 
           {/* Detalhes do Favorecido */}
-          <div className="p-3.5 rounded-xl bg-[#FAF7F0] border border-[#7F9078]/20 text-xs font-serif text-[#505F4E] space-y-1.5">
+          <div className="p-3.5 rounded-xl bg-[#FAF7F0] border border-[#7F9078]/20 text-xs font-serif text-[#2B332A] space-y-1.5">
             <div className="flex justify-between">
-              <span className="text-[#505F4E]/80">Titular da Conta:</span>
+              <span className="text-[#2B332A]/80">Titular da Conta:</span>
               <span className="font-normal text-[#3E483D]">{PIX_CONFIG.beneficiaryName}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-[#505F4E]/80">Cidade:</span>
+              <span className="text-[#2B332A]/80">Cidade:</span>
               <span>{PIX_CONFIG.bankCity}</span>
             </div>
           </div>
@@ -160,7 +160,7 @@ export const GiftModal: React.FC<GiftModalProps> = ({ gift, onClose }) => {
             href={generateWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full py-2.5 px-4 rounded-full bg-transparent hover:bg-[#7F9078]/10 text-xs font-serif font-normal tracking-wider uppercase text-[#505F4E] border border-[#7F9078]/30 transition-colors flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full py-2.5 px-4 rounded-full bg-transparent hover:bg-[#7F9078]/10 text-xs font-serif font-normal tracking-wider uppercase text-[#2B332A] border border-[#7F9078]/30 transition-colors flex items-center justify-center gap-2 cursor-pointer"
           >
             <Share2 className="w-4 h-4 text-[#7F9078]" />
             <span>Avisar aos Noivos no WhatsApp</span>

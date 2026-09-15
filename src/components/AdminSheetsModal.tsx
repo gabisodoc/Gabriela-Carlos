@@ -219,7 +219,7 @@ export const AdminSheetsModal: React.FC<AdminSheetsModalProps> = ({
                   <span className="text-xs uppercase tracking-wider text-[#7F9078] block mb-1 font-normal">
                     CONECTAR AO GOOGLE DRIVE
                   </span>
-                  <p className="text-sm text-[#505F4E] font-normal max-w-md">
+                  <p className="text-sm text-[#2B332A] font-normal max-w-md">
                     Conecte a sua conta do Google para gerar automaticamente a planilha oficial e manter as presenças sincronizadas em tempo real.
                   </p>
                 </div>
@@ -268,11 +268,11 @@ export const AdminSheetsModal: React.FC<AdminSheetsModalProps> = ({
                         <span className="text-sm font-normal text-[#3E483D]">
                           {currentUser.displayName || 'Gabriela Oliveira'}
                         </span>
-                        <span className="px-2 py-0.5 rounded-full bg-[#A8C3AE]/30 text-[#505F4E] text-[10px] font-normal">
+                        <span className="px-2 py-0.5 rounded-full bg-[#A8C3AE]/30 text-[#2B332A] text-[10px] font-normal">
                           Conectado
                         </span>
                       </div>
-                      <span className="text-xs text-[#505F4E]/80 font-normal">
+                      <span className="text-xs text-[#2B332A]/80 font-normal">
                         {currentUser.email}
                       </span>
                     </div>
@@ -281,7 +281,7 @@ export const AdminSheetsModal: React.FC<AdminSheetsModalProps> = ({
                   <button
                     type="button"
                     onClick={handleLogout}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#7F9078]/25 text-xs text-[#505F4E] hover:bg-[#FAF7F0] transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#7F9078]/25 text-xs text-[#2B332A] hover:bg-[#FAF7F0] transition-colors cursor-pointer"
                   >
                     <LogOut className="w-3.5 h-3.5" />
                     <span>Sair da conta</span>
@@ -333,7 +333,7 @@ export const AdminSheetsModal: React.FC<AdminSheetsModalProps> = ({
                       type="button"
                       onClick={handleSync}
                       disabled={syncing}
-                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#7F9078]/30 bg-[#FAF7F0] hover:bg-white text-xs text-[#505F4E] tracking-wider uppercase transition-colors cursor-pointer font-normal"
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-[#7F9078]/30 bg-[#FAF7F0] hover:bg-white text-xs text-[#2B332A] tracking-wider uppercase transition-colors cursor-pointer font-normal"
                     >
                       <RefreshCw className={`w-3.5 h-3.5 ${syncing ? 'animate-spin text-[#7F9078]' : ''}`} />
                       <span>{syncing ? 'Sincronizando...' : 'Sincronizar'}</span>
@@ -347,10 +347,10 @@ export const AdminSheetsModal: React.FC<AdminSheetsModalProps> = ({
           {/* Metric Summary Cards */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             <div className="bg-white rounded-2xl border border-[#7F9078]/20 p-4 text-center">
-              <div className="w-8 h-8 rounded-full bg-[#FAF7F0] border border-[#7F9078]/25 flex items-center justify-center mx-auto mb-2 text-[#505F4E]">
+              <div className="w-8 h-8 rounded-full bg-[#FAF7F0] border border-[#7F9078]/25 flex items-center justify-center mx-auto mb-2 text-[#2B332A]">
                 <Users className="w-4 h-4 text-[#7F9078]" />
               </div>
-              <span className="text-[11px] uppercase tracking-wider text-[#505F4E] block font-normal">
+              <span className="text-[11px] uppercase tracking-wider text-[#2B332A] block font-normal">
                 RESPOSTAS
               </span>
               <span className="font-serif text-2xl sm:text-3xl text-[#3E483D] font-normal">
@@ -359,10 +359,10 @@ export const AdminSheetsModal: React.FC<AdminSheetsModalProps> = ({
             </div>
 
             <div className="bg-white rounded-2xl border border-[#7F9078]/20 p-4 text-center">
-              <div className="w-8 h-8 rounded-full bg-[#A8C3AE]/30 border border-[#A8C3AE] flex items-center justify-center mx-auto mb-2 text-[#505F4E]">
+              <div className="w-8 h-8 rounded-full bg-[#A8C3AE]/30 border border-[#A8C3AE] flex items-center justify-center mx-auto mb-2 text-[#2B332A]">
                 <UserCheck className="w-4 h-4 text-[#7F9078]" />
               </div>
-              <span className="text-[11px] uppercase tracking-wider text-[#505F4E] block font-normal">
+              <span className="text-[11px] uppercase tracking-wider text-[#2B332A] block font-normal">
                 CONFIRMADOS
               </span>
               <span className="font-serif text-2xl sm:text-3xl text-[#7F9078] font-normal">
@@ -371,10 +371,10 @@ export const AdminSheetsModal: React.FC<AdminSheetsModalProps> = ({
             </div>
 
             <div className="bg-white rounded-2xl border border-[#7F9078]/20 p-4 text-center">
-              <div className="w-8 h-8 rounded-full bg-[#F3B99A]/30 border border-[#F3B99A] flex items-center justify-center mx-auto mb-2 text-[#505F4E]">
+              <div className="w-8 h-8 rounded-full bg-[#F3B99A]/30 border border-[#F3B99A] flex items-center justify-center mx-auto mb-2 text-[#2B332A]">
                 <Users className="w-4 h-4 text-[#DF806E]" />
               </div>
-              <span className="text-[11px] uppercase tracking-wider text-[#505F4E] block font-normal">
+              <span className="text-[11px] uppercase tracking-wider text-[#2B332A] block font-normal">
                 TOTAL PESSOAS
               </span>
               <span className="font-serif text-2xl sm:text-3xl text-[#3E483D] font-normal">
@@ -383,13 +383,13 @@ export const AdminSheetsModal: React.FC<AdminSheetsModalProps> = ({
             </div>
 
             <div className="bg-white rounded-2xl border border-[#7F9078]/20 p-4 text-center">
-              <div className="w-8 h-8 rounded-full bg-[#FAF7F0] border border-[#7F9078]/25 flex items-center justify-center mx-auto mb-2 text-[#505F4E]">
-                <UserX className="w-4 h-4 text-[#505F4E]" />
+              <div className="w-8 h-8 rounded-full bg-[#FAF7F0] border border-[#7F9078]/25 flex items-center justify-center mx-auto mb-2 text-[#2B332A]">
+                <UserX className="w-4 h-4 text-[#2B332A]" />
               </div>
-              <span className="text-[11px] uppercase tracking-wider text-[#505F4E] block font-normal">
+              <span className="text-[11px] uppercase tracking-wider text-[#2B332A] block font-normal">
                 RECUSAS
               </span>
-              <span className="font-serif text-2xl sm:text-3xl text-[#505F4E] font-normal">
+              <span className="font-serif text-2xl sm:text-3xl text-[#2B332A] font-normal">
                 {declinedResponses.length}
               </span>
             </div>
@@ -404,14 +404,14 @@ export const AdminSheetsModal: React.FC<AdminSheetsModalProps> = ({
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Buscar por nome do convidado ou recado..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-[#7F9078]/30 focus:border-[#7F9078] outline-hidden text-xs sm:text-sm text-[#3E483D] placeholder-[#505F4E]/50 font-normal"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-[#7F9078]/30 focus:border-[#7F9078] outline-hidden text-xs sm:text-sm text-[#3E483D] placeholder-[#2B332A]/50 font-normal"
               />
             </div>
 
             <button
               type="button"
               onClick={exportRsvpsToCsv}
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[#7F9078]/30 text-xs text-[#505F4E] hover:bg-[#FAF7F0] transition-colors cursor-pointer font-normal whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[#7F9078]/30 text-xs text-[#2B332A] hover:bg-[#FAF7F0] transition-colors cursor-pointer font-normal whitespace-nowrap"
             >
               <Download className="w-3.5 h-3.5 text-[#7F9078]" />
               <span>Baixar Planilha (CSV)</span>
