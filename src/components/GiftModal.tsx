@@ -51,7 +51,7 @@ export const GiftModal: React.FC<GiftModalProps> = ({ gift, onClose }) => {
       onClick={handleClose}
     >
       <div
-        className="relative bg-[#F7F2E9] rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-[#7F9078]/25 text-[#3E483D] overflow-hidden my-8"
+        className="relative bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-[#7F9078]/25 text-[#3E483D] overflow-hidden my-8"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}

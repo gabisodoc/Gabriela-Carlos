@@ -15,18 +15,13 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Names */}
-        <h2 className="font-display text-3xl sm:text-5xl text-white font-normal tracking-tight mb-2 flex items-center justify-center flex-wrap">
+        <h2 className="font-display text-3xl sm:text-5xl text-white font-normal tracking-tight mb-6 flex items-center justify-center flex-wrap">
           <span className="font-display font-normal">Gabriela</span>
           <span className="font-display italic text-2xl sm:text-4xl text-white mx-2 sm:mx-3 font-normal">
             &
           </span>
           <span className="font-display font-normal">Carlos</span>
         </h2>
-
-        {/* Tagline */}
-        <p className="font-serif italic text-base sm:text-xl text-[#F7F2E9]/80 mb-6 font-light">
-          One love, a lifetime together
-        </p>
 
         {/* Decorative Divider */}
         <div className="flex items-center gap-3 mb-6">

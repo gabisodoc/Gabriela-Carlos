@@ -27,6 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
   const navItems = [
     { label: 'NOSSA HISTÓRIA', href: '#nossa-historia' },
     { label: 'O EVENTO', href: '#o-evento' },
+    { label: 'PROGRAMAÇÃO', href: '#programacao' },
     { label: 'DRESS CODE', href: '#dress-code' },
     { label: 'PRESENTES', href: '#presentes' },
     { label: 'CONFIRMAR', href: '#confirmar-presenca' },
@@ -44,7 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
       id="main-navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         isVisible
-          ? 'translate-y-0 opacity-100 shadow-xs backdrop-blur-md bg-[#F7F2E9]/95 border-b border-[#7F9078]/15'
+          ? 'translate-y-0 opacity-100 shadow-xs backdrop-blur-md bg-white/95 border-b border-[#7F9078]/15'
           : '-translate-y-full opacity-0 pointer-events-none'
       }`}
     >
@@ -95,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
 
       {/* Mobile Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#F7F2E9] border-b border-[#7F9078]/20 px-6 py-5 shadow-lg animate-fadeIn">
+        <div className="md:hidden bg-white border-b border-[#7F9078]/20 px-6 py-5 shadow-lg animate-fadeIn">
           <div className="flex flex-col gap-4">
             {navItems.map((item) => (
               <a

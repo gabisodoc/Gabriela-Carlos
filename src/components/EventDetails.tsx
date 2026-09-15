@@ -1,12 +1,12 @@
 import React from 'react';
-import { Calendar, Clock, MapPin, ExternalLink } from 'lucide-react';
+import { Calendar, MapPin, ExternalLink } from 'lucide-react';
 
 export const EventDetails: React.FC = () => {
   const address = "Estr. Mun. Santo Antonio, 270 - Jardim Sandra II, Mairiporã - SP, 07631-315";
   const mapsUrl = "https://maps.app.goo.gl/CKtM7sHc2Vt9mYKy9";
 
   return (
-    <section id="o-evento" className="py-20 sm:py-28 bg-[#F3EFE6]/60 border-y border-[#7F9078]/15">
+    <section id="o-evento" className="py-20 sm:py-28 bg-white border-y border-[#7F9078]/15">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -14,7 +14,7 @@ export const EventDetails: React.FC = () => {
           <span className="font-serif tracking-[0.25em] text-xs uppercase text-[#DF806E] font-bold block mb-2">
             CERIMÔNIA & RECEPÇÃO
           </span>
-          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#3E483D] font-normal tracking-tight mb-4">
+          <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-[#3E483D] font-normal mb-3">
             O Evento
           </h2>
           <div className="w-12 h-[1px] bg-[#7F9078]/40 mx-auto mb-4" />
@@ -28,37 +28,42 @@ export const EventDetails: React.FC = () => {
           {/* 3 Metric Columns */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6 divide-y md:divide-y-0 md:divide-x divide-[#7F9078]/15 pb-8 sm:pb-10">
             
-            {/* 1. Data */}
-            <div className="flex flex-col items-center text-center pt-4 md:pt-0">
+            {/* 1. Data e Horário */}
+            <div className="flex flex-col items-center justify-center text-center pt-4 md:pt-0">
               <div className="w-13 h-13 rounded-2xl bg-[#A8C3AE]/20 border border-[#A8C3AE]/40 flex items-center justify-center text-[#505F4E] mb-4">
                 <Calendar className="w-6 h-6" />
               </div>
               <span className="text-[11px] font-serif uppercase tracking-[0.2em] text-[#7F9078] font-normal mb-1">
-                DATA
+                DATA & HORÁRIO
               </span>
               <p className="font-serif text-xl sm:text-2xl text-[#3E483D] font-normal">
                 05 de setembro de 2027
+              </p>
+              <p className="font-serif text-lg sm:text-xl text-[#DF806E] font-medium mt-1">
+                às 14h30
               </p>
               <span className="text-xs text-[#505F4E]/80 mt-1 font-light">
                 Domingo à tarde
               </span>
             </div>
 
-            {/* 2. Horário */}
-            <div className="flex flex-col items-center text-center pt-8 md:pt-0 md:px-4">
-              <div className="w-13 h-13 rounded-2xl bg-[#F3B99A]/20 border border-[#F3B99A]/40 flex items-center justify-center text-[#DF806E] mb-4">
-                <Clock className="w-6 h-6" />
+            {/* 2. Foto do Local */}
+            <div className="flex flex-col items-center justify-center text-center pt-8 md:pt-0 md:px-4">
+              <div className="w-full max-w-[240px] h-48 rounded-2xl overflow-hidden border border-[#7F9078]/25 shadow-md group">
+                <img
+                  src="/venue-photo.jpg?v=3"
+                  alt="Sítio Dois Lagos — Local da cerimônia e recepção"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  referrerPolicy="no-referrer"
+                />
               </div>
-              <span className="text-[11px] font-serif uppercase tracking-[0.2em] text-[#7F9078] font-normal mb-1">
-                HORÁRIO
+              <span className="text-[11px] font-serif uppercase tracking-[0.2em] text-[#7F9078] font-normal mt-2.5">
+                NOSSO CENÁRIO
               </span>
-              <p className="font-serif text-xl sm:text-2xl text-[#3E483D] font-normal">
-                14h30
-              </p>
             </div>
 
             {/* 3. Local */}
-            <div className="flex flex-col items-center text-center pt-8 md:pt-0 md:pl-4">
+            <div className="flex flex-col items-center justify-center text-center pt-8 md:pt-0 md:pl-4">
               <div className="w-13 h-13 rounded-2xl bg-[#F1D487]/30 border border-[#F1D487]/50 flex items-center justify-center text-[#7F9078] mb-4">
                 <MapPin className="w-6 h-6" />
               </div>

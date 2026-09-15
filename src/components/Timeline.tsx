@@ -3,7 +3,7 @@ import { TIMELINE_CHAPTERS } from '../data/timeline';
 
 export const Timeline: React.FC = () => {
   return (
-    <section id="nossa-historia" className="py-20 sm:py-28 bg-[#F7F2E9] overflow-hidden">
+    <section id="nossa-historia" className="py-20 sm:py-28 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -11,7 +11,7 @@ export const Timeline: React.FC = () => {
           <span className="font-serif tracking-[0.25em] text-xs uppercase text-[#DF806E] font-bold block mb-2">
             COMO TUDO ACONTECEU
           </span>
-          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#3E483D] font-normal tracking-tight mb-4">
+          <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-[#3E483D] font-normal mb-3">
             Nossa História
           </h2>
           <div className="w-12 h-[1px] bg-[#7F9078]/40 mx-auto mb-4" />

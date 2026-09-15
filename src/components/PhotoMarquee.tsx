@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 const COUPLE_PHOTOS = [
   {
@@ -36,24 +36,139 @@ const COUPLE_PHOTOS = [
 ];
 
 export const PhotoMarquee: React.FC = () => {
-  // Repeating array twice for seamless continuous sliding to the right
-  const marqueeList = [...COUPLE_PHOTOS, ...COUPLE_PHOTOS];
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isInteracting, setIsInteracting] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const resumeTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Multiply list 4 times for infinite seamless loop in both directions
+  const loopedPhotos = [...COUPLE_PHOTOS, ...COUPLE_PHOTOS, ...COUPLE_PHOTOS, ...COUPLE_PHOTOS];
+
+  // Set initial scroll position to the middle so the user can scroll left or right immediately
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (el) {
+      // Defer slightly to ensure layout and image wrappers are computed
+      const timer = setTimeout(() => {
+        if (el.scrollWidth > el.clientWidth) {
+          el.scrollLeft = el.scrollWidth / 4;
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  // Continuous auto-scroll animation loop
+  useEffect(() => {
+    let animationFrameId: number;
+    const speed = 0.75; // pixels per frame
+
+    const step = () => {
+      const el = scrollRef.current;
+      if (el && !isInteracting && !isDragging) {
+        el.scrollLeft += speed;
+
+        // Infinite loop boundary reset
+        const oneSetWidth = el.scrollWidth / 4;
+        if (el.scrollLeft >= oneSetWidth * 3) {
+          el.scrollLeft -= oneSetWidth;
+        } else if (el.scrollLeft <= 10) {
+          el.scrollLeft += oneSetWidth;
+        }
+      }
+      animationFrameId = requestAnimationFrame(step);
+    };
+
+    animationFrameId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isInteracting, isDragging]);
+
+  // Pause auto-scroll temporarily when user interacts, then resume after a short pause
+  const notifyUserInteraction = () => {
+    setIsInteracting(true);
+    if (resumeTimerRef.current) {
+      clearTimeout(resumeTimerRef.current);
+    }
+    resumeTimerRef.current = setTimeout(() => {
+      setIsInteracting(false);
+    }, 2800);
+  };
+
+  // Mouse Drag Events
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollRef.current) return;
+    setIsDragging(true);
+    setIsInteracting(true);
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5; // drag sensitivity
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+    notifyUserInteraction();
+  };
+
+  const handleMouseUpOrLeave = () => {
+    if (isDragging) {
+      setIsDragging(false);
+      notifyUserInteraction();
+    }
+  };
+
+  // Touch Events for Mobile / Tablet swipe
+  const handleTouchStart = () => {
+    setIsInteracting(true);
+    if (resumeTimerRef.current) {
+      clearTimeout(resumeTimerRef.current);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    notifyUserInteraction();
+  };
 
   return (
-    <section className="py-8 sm:py-12 bg-[#F7F2E9] overflow-hidden border-t border-[#7F9078]/15">
+    <section 
+      id="galeria-fotos" 
+      className="py-8 sm:py-12 bg-white border-t border-[#7F9078]/15 relative select-none"
+    >
       <div className="relative w-full overflow-hidden">
-        {/* Marquee Track sliding to the right */}
-        <div className="animate-slide-marquee flex gap-4 sm:gap-6 items-center">
-          {marqueeList.map((photo, index) => (
+        {/* Scrollable Container with drag, touch swipe, and auto-scroll */}
+        <div
+          ref={scrollRef}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUpOrLeave}
+          onMouseLeave={handleMouseUpOrLeave}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          onWheel={notifyUserInteraction}
+          className={`flex gap-4 sm:gap-6 items-center overflow-x-auto no-scrollbar px-4 cursor-grab active:cursor-grabbing ${
+            isDragging ? 'scroll-auto' : 'scroll-smooth'
+          }`}
+          style={{
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+            WebkitOverflowScrolling: 'touch'
+          }}
+        >
+          {loopedPhotos.map((photo, index) => (
             <div
               key={`${photo.url}-${index}`}
-              className="w-52 sm:w-64 md:w-72 h-72 sm:h-80 md:h-96 shrink-0 rounded-2xl overflow-hidden shadow-md transition-transform duration-500 hover:scale-102 bg-[#E8A7A0]/10"
+              className="w-56 sm:w-64 md:w-72 h-72 sm:h-80 md:h-96 shrink-0 rounded-2xl overflow-hidden shadow-md transition-transform duration-300 hover:scale-[1.02] bg-[#E8A7A0]/10 border border-[#7F9078]/10 select-none"
             >
               <img
                 src={photo.url}
                 alt={photo.alt}
                 loading="lazy"
-                className="w-full h-full object-cover object-center"
+                draggable={false}
+                className="w-full h-full object-cover object-center pointer-events-none"
               />
             </div>
           ))}

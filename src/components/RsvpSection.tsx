@@ -121,7 +121,7 @@ export const RsvpSection: React.FC = () => {
   };
 
   return (
-    <section id="confirmar-presenca" className="py-20 sm:py-28 bg-[#FAF7F0] border-t border-[#7F9078]/15">
+    <section id="confirmar-presenca" className="py-20 sm:py-28 bg-white border-t border-[#7F9078]/15">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -129,7 +129,7 @@ export const RsvpSection: React.FC = () => {
           <span className="font-serif tracking-[0.25em] text-xs uppercase text-[#DF806E] font-bold block mb-2">
             VOCÊ É NOSSO CONVIDADO
           </span>
-          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#3E483D] font-normal tracking-tight mb-4">
+          <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-[#3E483D] font-normal mb-3">
             Confirmar Presença
           </h2>
           <div className="w-12 h-[1px] bg-[#7F9078]/40 mx-auto mb-4" />

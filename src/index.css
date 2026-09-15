@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: "Playlist Script";
-  src: url("https://db.onlinewebfonts.com/t/1fed4454352f201d52b65ca5480afb2d.woff2") format("woff2"),
+  src: url("/fonts/playlist-script.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/1fed4454352f201d52b65ca5480afb2d.woff2") format("woff2"),
        url("https://db.onlinewebfonts.com/t/1fed4454352f201d52b65ca5480afb2d.woff") format("woff"),
        url("https://db.onlinewebfonts.com/t/1fed4454352f201d52b65ca5480afb2d.ttf") format("truetype");
   font-weight: normal;
@@ -10,10 +11,23 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Playlist-Script";
+  src: url("/fonts/playlist-script.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/1fed4454352f201d52b65ca5480afb2d.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-script {
+  font-family: "Dancing Script", cursive, sans-serif !important;
+}
+
 @theme {
   --font-serif: "Cormorant Garamond", serif;
   --font-display: "Playfair Display", serif;
-  --font-script: "Playlist Script", "Playlist-Script", cursive;
+  --font-script: "Dancing Script", cursive, sans-serif;
   --font-sans: "Cormorant Garamond", serif;
 
   --color-offwhite: #F7F2E9;
@@ -47,12 +61,22 @@
   animation-play-state: paused;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F7F2E9;
+  background: #ffffff;
 }
 ::-webkit-scrollbar-thumb {
   background: #A8C3AE;

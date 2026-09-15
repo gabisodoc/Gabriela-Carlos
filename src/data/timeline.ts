@@ -5,8 +5,8 @@ export const TIMELINE_CHAPTERS: TimelineChapter[] = [
     chapter: "Capítulo I",
     title: "O Início",
     text: "Tudo começou com um encontro simples num parque, num daqueles dias em que o sol parecia conspirar a nosso favor. Bastaram algumas horas de conversa para percebermos que ali existia algo raro: uma conexão leve, verdadeira e cheia de risadas.\n\nO tempo passou depressa porque tudo fluía com naturalidade. Pouco depois veio o pedido de namoro e, com ele, a certeza de que queríamos caminhar lado a lado. O amor cresceu rápido, mas firme, como quem já sabia que era para durar.",
-    photoUrl: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=900&auto=format&fit=crop",
-    photoAlt: "Gabriela e Carlos sorrindo juntos sob a luz do sol",
+    photoUrl: "/history-photo-1.jpg",
+    photoAlt: "Gabriela e Carlos no início da história juntos",
     photoPosition: "right"
   },
   {
