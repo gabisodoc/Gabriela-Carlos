@@ -5,21 +5,12 @@ import {
   CheckCircle2,
   Minus,
   Plus,
-  FileSpreadsheet,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { addRsvpRecord } from '../services/rsvpStorage';
 import { getAccessToken, getStoredSpreadsheetId } from '../services/googleSheets';
 
-interface RsvpSectionProps {
-  onOpenSheetsModal?: () => void;
-  spreadsheetUrl?: string | null;
-}
-
-export const RsvpSection: React.FC<RsvpSectionProps> = ({
-  onOpenSheetsModal,
-  spreadsheetUrl,
-}) => {
+export const RsvpSection: React.FC = () => {
   const [fullName, setFullName] = useState('');
   const [attending, setAttending] = useState<'yes' | 'no'>('yes');
   const [guestCount, setGuestCount] = useState(0); // 0 = Somente eu
@@ -67,7 +58,27 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({
               .join(', ')
           : '';
 
-      // 1. Save locally and sync directly to Google Sheets if connected
+      const formDataObj = {
+        'form-name': 'rsvp',
+        fullName: fullName.trim(),
+        attending: attending === 'yes' ? 'Sim, estarei lá!' : 'Não poderei ir',
+        guestCount: String(guestCount),
+        companionNames: formattedCompanions,
+        message: message.trim(),
+      };
+
+      // 1. Submit to Netlify Forms (works automatically when deployed on Netlify)
+      try {
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formDataObj).toString(),
+        });
+      } catch (postErr) {
+        console.warn('Netlify form submission notice:', postErr);
+      }
+
+      // 2. Also save locally in browser storage as backup
       const token = getAccessToken();
       const sheetId = getStoredSpreadsheetId();
 
@@ -128,20 +139,11 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({
         </div>
 
         {/* Guest Restriction Notice Banner */}
-        <div className="mb-8 p-4 rounded-2xl bg-white/80 border border-[#7F9078]/25 shadow-xs flex items-center justify-between gap-3 text-xs sm:text-sm text-[#505F4E]">
-          <div className="flex items-center gap-3">
-            <ShieldCheck className="w-5 h-5 text-[#7F9078] shrink-0" />
-            <span>
-              <span className="text-[#3E483D]">Confirmação individual:</span> Por favor, informe o número de acompanhantes indicado no seu convite.
-            </span>
-          </div>
-
-          {spreadsheetUrl && (
-            <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#A8C3AE]/25 text-[#505F4E] text-xs font-normal whitespace-nowrap">
-              <FileSpreadsheet className="w-3.5 h-3.5 text-[#7F9078]" />
-              <span>Google Sheets ativo</span>
-            </span>
-          )}
+        <div className="mb-8 p-4 rounded-2xl bg-white/80 border border-[#7F9078]/25 shadow-xs flex items-center gap-3 text-xs sm:text-sm text-[#505F4E]">
+          <ShieldCheck className="w-5 h-5 text-[#7F9078] shrink-0" />
+          <span>
+            <span className="text-[#3E483D]">Confirmação individual:</span> Por favor, informe o número de acompanhantes indicado no seu convite.
+          </span>
         </div>
 
         {/* Card Form */}
@@ -176,7 +178,24 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              name="rsvp"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              className="space-y-6"
+            >
+              {/* Hidden inputs for Netlify Form Submission */}
+              <input type="hidden" name="form-name" value="rsvp" />
+              <input type="hidden" name="bot-field" />
+              <input type="hidden" name="attending" value={attending === 'yes' ? 'Sim, estarei lá!' : 'Não poderei ir'} />
+              <input type="hidden" name="guestCount" value={String(guestCount)} />
+              <input
+                type="hidden"
+                name="companionNames"
+                value={guestCount > 0 ? companionNames.map((n) => n.trim()).filter(Boolean).join(', ') : ''}
+              />
               
               {/* Nome Completo */}
               <div>
@@ -188,6 +207,7 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({
                 </label>
                 <input
                   id="rsvp-full-name"
+                  name="fullName"
                   type="text"
                   required
                   value={fullName}
@@ -321,6 +341,7 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({
                 </label>
                 <textarea
                   id="rsvp-message"
+                  name="message"
                   rows={3}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
@@ -345,20 +366,6 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({
                 Ao clicar em enviar, sua confirmação será registrada diretamente na lista oficial dos noivos.
               </p>
             </form>
-          )}
-
-          {/* Area dos Noivos */}
-          {onOpenSheetsModal && (
-            <div className="mt-8 pt-6 border-t border-[#7F9078]/15 flex items-center justify-center text-center">
-              <button
-                type="button"
-                onClick={onOpenSheetsModal}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#7F9078]/30 bg-[#FAF7F0] hover:bg-white text-xs text-[#505F4E] hover:text-[#3E483D] transition-colors cursor-pointer font-normal"
-              >
-                <FileSpreadsheet className="w-3.5 h-3.5 text-[#7F9078]" />
-                <span>Área dos Noivos: Google Sheets</span>
-              </button>
-            </div>
           )}
         </div>
 

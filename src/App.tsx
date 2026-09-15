@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { User } from 'firebase/auth';
+import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Timeline } from './components/Timeline';
@@ -9,40 +8,8 @@ import { GiftsSection } from './components/GiftsSection';
 import { RsvpSection } from './components/RsvpSection';
 import { PhotoMarquee } from './components/PhotoMarquee';
 import { Footer } from './components/Footer';
-import { AdminSheetsModal } from './components/AdminSheetsModal';
-import { initAuth, getStoredSpreadsheetId } from './services/googleSheets';
 
 export default function App() {
-  const [isSheetsModalOpen, setIsSheetsModalOpen] = useState(false);
-  const [currentUser, setCurrentUser] = useState<User | null>(null);
-  const [spreadsheetUrl, setSpreadsheetUrl] = useState<string | null>(null);
-
-  useEffect(() => {
-    // Check if a spreadsheet ID was previously stored
-    const existingId = getStoredSpreadsheetId();
-    if (existingId) {
-      setSpreadsheetUrl(`https://docs.google.com/spreadsheets/d/${existingId}/edit`);
-    }
-
-    // Listen to Firebase Auth state
-    const unsubscribe = initAuth(
-      (user) => {
-        setCurrentUser(user);
-        const sheetId = getStoredSpreadsheetId();
-        if (sheetId) {
-          setSpreadsheetUrl(`https://docs.google.com/spreadsheets/d/${sheetId}/edit`);
-        }
-      },
-      () => {
-        setCurrentUser(null);
-      }
-    );
-
-    return () => {
-      unsubscribe();
-    };
-  }, []);
-
   const scrollToSection = (sectionId: string) => {
     const el = document.getElementById(sectionId);
     if (el) {
@@ -72,28 +39,15 @@ export default function App() {
         {/* 4. Lista de Presentes (Pix Direto) */}
         <GiftsSection />
 
-        {/* 5. Confirmação de Presença (RSVP com Google Sheets) */}
-        <RsvpSection
-          onOpenSheetsModal={() => setIsSheetsModalOpen(true)}
-          spreadsheetUrl={spreadsheetUrl}
-        />
+        {/* 5. Confirmação de Presença (RSVP) */}
+        <RsvpSection />
 
         {/* 6. Carrossel Infinito de Fotos Deslizando para a Direita */}
         <PhotoMarquee />
       </main>
 
       {/* Rodapé Romântico */}
-      <Footer onOpenSheetsModal={() => setIsSheetsModalOpen(true)} />
-
-      {/* Modal de Gestão de Presenças e Conexão Google Sheets */}
-      <AdminSheetsModal
-        isOpen={isSheetsModalOpen}
-        onClose={() => setIsSheetsModalOpen(false)}
-        currentUser={currentUser}
-        onUserChange={setCurrentUser}
-        spreadsheetUrl={spreadsheetUrl}
-        onSpreadsheetUrlChange={setSpreadsheetUrl}
-      />
+      <Footer />
     </div>
   );
 }

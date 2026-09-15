@@ -46,7 +46,7 @@ export const Hero: React.FC<HeroProps> = () => {
       {/* Background Image with Romantic Gradients */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop"
+          src="/hero-bg.jpg"
           alt="Gabriela e Carlos celebrando o amor"
           className="w-full h-full object-cover object-center scale-105 transform animate-pulse duration-1000"
           style={{ animationDuration: '8s' }}
@@ -61,7 +61,7 @@ export const Hero: React.FC<HeroProps> = () => {
         {/* Couple Names */}
         <h1 className="font-display text-5xl sm:text-7xl md:text-8xl tracking-tight text-white drop-shadow-md mb-2 sm:mb-3 flex items-center justify-center flex-wrap">
           <span className="font-display font-normal">Gabriela</span>
-          <span className="font-display italic text-4xl sm:text-6xl md:text-7xl text-[#F3B99A] mx-3 sm:mx-4 font-normal">
+          <span className="font-display italic text-4xl sm:text-6xl md:text-7xl text-white mx-3 sm:mx-4 font-normal">
             &
           </span>
           <span className="font-display font-normal">Carlos</span>
@@ -73,7 +73,7 @@ export const Hero: React.FC<HeroProps> = () => {
         </p>
 
         {/* Wedding Date Highlight */}
-        <div className="inline-flex items-center text-xs sm:text-sm tracking-[0.25em] uppercase text-[#F1D487] font-normal mb-8 sm:mb-10 bg-black/20 backdrop-blur-xs px-5 py-1.5 rounded-full border border-white/15">
+        <div className="inline-flex items-center text-sm sm:text-base md:text-lg tracking-[0.28em] uppercase text-[#F1D487] font-medium mb-8 sm:mb-10 bg-black/25 backdrop-blur-xs px-6 py-2 rounded-full border border-white/20 shadow-md">
           <span>05 . 09 . 2027</span>
         </div>
 

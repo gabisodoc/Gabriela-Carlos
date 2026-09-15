@@ -4,7 +4,7 @@ import { WEDDING_GIFTS } from '../data/gifts';
 import { GiftModal } from './GiftModal';
 import { ChevronDown, ChevronUp, Gift } from 'lucide-react';
 
-const INITIAL_VISIBLE_COUNT = 9;
+const INITIAL_VISIBLE_COUNT = 8;
 
 export const GiftsSection: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<'todos' | 'ate-500' | '500-1000' | 'acima-1000'>('todos');

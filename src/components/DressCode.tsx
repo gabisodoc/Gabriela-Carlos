@@ -30,18 +30,12 @@ export const DressCode: React.FC = () => {
                 alt="Inspiração de vestido fluido e elegante para casamento"
                 className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-6">
-                <span className="font-script text-4xl sm:text-5xl text-white drop-shadow-md font-normal">
-                  Elas
-                </span>
-              </div>
             </div>
 
             <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="font-serif text-2xl text-[#3E483D] font-normal mb-2">
-                  Vestidos fluidos
+                <h3 className="font-serif text-2xl sm:text-3xl text-[#3E483D] font-normal mb-2">
+                  Elas
                 </h3>
                 <p className="font-serif text-base sm:text-lg leading-relaxed text-[#505F4E] font-normal">
                   Dicas: Vestidos mídi ou longos em tecidos leves e elegantes. Saltos, sandálias e scarpins (sinta-se à vontade para levar rasteirinha ou sandália baixa para a festa). Acessórios como bolsas, joias e bijus para trazer harmonia.
@@ -58,18 +52,12 @@ export const DressCode: React.FC = () => {
                 alt="Inspiração de homem com calça social, camisa e blazer elegante de casamento"
                 className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-6">
-                <span className="font-script text-4xl sm:text-5xl text-white drop-shadow-md font-normal">
-                  Eles
-                </span>
-              </div>
             </div>
 
             <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
               <div>
-                <h3 className="font-serif text-2xl text-[#3E483D] font-normal mb-2">
-                  Alfaiataria moderna
+                <h3 className="font-serif text-2xl sm:text-3xl text-[#3E483D] font-normal mb-2">
+                  Eles
                 </h3>
                 <p className="font-serif text-base sm:text-lg leading-relaxed text-[#505F4E] font-normal">
                   Dicas: Calça social ou sarja com camisa. Blazer e gravata opcionais para complementar o look. Sapato social e mocassim para os pés.

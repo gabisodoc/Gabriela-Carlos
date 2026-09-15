@@ -1,11 +1,6 @@
 import React from 'react';
-import { FileSpreadsheet } from 'lucide-react';
 
-interface FooterProps {
-  onOpenSheetsModal?: () => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onOpenSheetsModal }) => {
+export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#485646] text-[#F7F2E9] py-16 sm:py-24 border-t border-[#3B483A]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
@@ -22,7 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenSheetsModal }) => {
         {/* Names */}
         <h2 className="font-display text-3xl sm:text-5xl text-white font-normal tracking-tight mb-2 flex items-center justify-center flex-wrap">
           <span className="font-display font-normal">Gabriela</span>
-          <span className="font-display italic text-2xl sm:text-4xl text-[#F3B99A] mx-2 sm:mx-3 font-normal">
+          <span className="font-display italic text-2xl sm:text-4xl text-white mx-2 sm:mx-3 font-normal">
             &
           </span>
           <span className="font-display font-normal">Carlos</span>
@@ -46,21 +41,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenSheetsModal }) => {
         </div>
 
         {/* Warm Dedication */}
-        <p className="text-xs text-[#F7F2E9]/70 font-light tracking-wide max-w-sm mb-6">
+        <p className="text-xs text-[#F7F2E9]/70 font-light tracking-wide max-w-sm">
           Feito com amor para celebrar o nosso para sempre.
         </p>
-
-        {/* Discreet Wedding Couple Admin Link */}
-        {onOpenSheetsModal && (
-          <button
-            type="button"
-            onClick={onOpenSheetsModal}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#F7F2E9]/20 bg-white/5 hover:bg-white/10 text-xs text-[#F7F2E9]/80 hover:text-white transition-colors cursor-pointer"
-          >
-            <FileSpreadsheet className="w-3.5 h-3.5 text-[#F1D487]" />
-            <span>Área dos Noivos • Planilha Google Sheets</span>
-          </button>
-        )}
       </div>
     </footer>
   );

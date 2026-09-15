@@ -17,6 +17,17 @@
     <link href="https://db.onlinewebfonts.com/c/1fed4454352f201d52b65ca5480afb2d?family=Playlist-Script" rel="stylesheet">
   </head>
   <body class="bg-[#F7F2E9] text-[#3E483D] selection:bg-[#7F9078]/20 selection:text-[#2E382D] antialiased">
+    <!-- Static form for Netlify Forms bot pre-processing in Vite React SPA -->
+    <form name="rsvp" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="form-name" value="rsvp" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="fullName" />
+      <input type="text" name="attending" />
+      <input type="text" name="guestCount" />
+      <input type="text" name="companionNames" />
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
