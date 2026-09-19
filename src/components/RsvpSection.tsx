@@ -70,23 +70,30 @@ export const RsvpSection: React.FC = () => {
       // 1. Submit to Google Sheets via Google Apps Script Web App
       const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbymE0Wwm00pUyF0CIkCorkGiCFoApJgjiB-Rg6DnQ7VbvKjEbM9sPmUNcR44NIMeKwy/exec';
       try {
-        const payload = {
+        const payloadData = {
           fullName: fullName.trim(),
-          attending: attending,
-          guestCount,
+          attending: attending === 'yes' ? 'Sim' : 'Não',
+          guestCount: guestCount,
           companionNames: formattedCompanions,
           message: message.trim(),
-          timestamp: new Date().toISOString(),
+          timestamp: new Date().toLocaleString('pt-BR'),
         };
 
-        // Envia via fetch com mode 'no-cors' para contornar redirecionamentos nativos do Google Script
+        // Envia como FormData / URLSearchParams compatível tanto com JSON.parse quanto com e.parameter no Google Script
+        const formBody = new URLSearchParams();
+        Object.entries(payloadData).forEach(([key, val]) => {
+          formBody.append(key, String(val));
+        });
+        // Também inclui campo 'data' em JSON caso o script leia JSON.parse(e.postData.contents) ou e.parameter.data
+        formBody.append('data', JSON.stringify(payloadData));
+
         await fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
           headers: {
-            'Content-Type': 'text/plain;charset=utf-8',
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
           },
-          body: JSON.stringify(payload),
+          body: formBody.toString(),
         });
       } catch (sheetsErr) {
         console.warn('Erro ao salvar no Google Sheets:', sheetsErr);
