@@ -71,6 +71,7 @@ export const Timeline: React.FC = () => {
                     key={currentChapter.photoUrl}
                     src={currentChapter.photoUrl}
                     alt={currentChapter.photoAlt}
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-center transition-all duration-700 ease-out animate-fadeIn"
                     loading="lazy"
                   />

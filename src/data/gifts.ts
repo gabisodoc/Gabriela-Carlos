@@ -37,7 +37,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Passeio romântico de gôndola privativa em Veneza",
     price: 700,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?auto=format&fit=crop&w=800&q=80",
     description: "Navegar pelos canais históricos de Veneza ao som do gondoleiro sob a Ponte dos Suspiros.",
   },
 
@@ -67,7 +67,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Moedinhas para jogar na Fontana di Trevi",
     price: 75,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=800&q=80",
     description: "Fazer os pedidos mais especiais jogando moedas de costas na fonte mais famosa do mundo.",
   },
 
@@ -137,7 +137,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Passeio de barco / tour guiado na viagem",
     price: 550,
     category: "experiencias",
-    image: "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLNPZmCYGfB1tQcTuDkij0pwhlaLSZL4pFVdgho-6kBg&s=10",
     description: "Tour marítimo deslumbrante contornando as grutas e falésias da Costa Amalfitana.",
   },
 
@@ -147,7 +147,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Aperitivo italiano com Aperol Spritz e petiscos",
     price: 160,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=800&q=80",
     description: "O ritual sagrado do happy hour italiano assistindo o entardecer nas praças de Roma.",
   },
 
@@ -207,7 +207,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Focaccia quentinha de alecrim pelas ruas de Florença",
     price: 90,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1526401485004-46910ecc8e51?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?auto=format&fit=crop&w=800&q=80",
     description: "Pão artesanal crocante com azeite extravirgem e flor de sal em padaria típica.",
   },
 
@@ -217,7 +217,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Almoço em taverna tradicional grega à beira-mar",
     price: 420,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ93HSwyHEKTvCljwS70b3V-_CJwduFVv33_TIIs3aNqQ&s=10",
     description: "Salada grega fresca, tzatziki, moussaka e pães caseiros fofos na praia.",
   },
 
@@ -257,7 +257,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Bruschettas tradicionais com tomates frescos e manjericão",
     price: 140,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=800&q=80",
     description: "Aperitivo toscano crocante feito na brasa com azeite recém-extraído.",
   },
 
@@ -267,7 +267,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Aluguel de Vespa clássica para rodar pela Toscana",
     price: 720,
     category: "experiencias",
-    image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80",
+    image: "https://www.italia.it/content/dam/tdh/pt/interests/italia/viaggio-in-vespa-in-italia-o-su-una-500-d-epoca/media/1600X1000_viaggio_in_vespa_o_cinquecento_hero.jpg",
     description: "Sentir a brisa italiana percorrendo os campos de ciprestes e vilarejos medievais.",
   },
 
@@ -277,7 +277,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Piquenique nos jardins da Villa Borghese em Roma",
     price: 380,
     category: "experiencias",
-    image: "https://images.unsplash.com/photo-1526401485004-46910ecc8e51?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTztJyGj1GZi5mSHrYfYW6578lqvF9U9WLIR1ejcYMniQ&s=10",
     description: "Foccacia quentinha, queijos nobres e suco natural à sombra dos pinheiros romanos.",
   },
 
@@ -287,7 +287,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Croissants com creme de pistache e cappuccino",
     price: 100,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80",
     description: "Parada matinal clássica em balcão italiano para começar o dia.",
   },
 
@@ -297,7 +297,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Sessão de fotos pelas vielas brancas de Santorini",
     price: 990,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbDeWwii1pONzL5NYg7MhXZTTi72mXyM8j1yoBROBgEw&s=10",
     description: "Fotógrafo profissional registrando o casal entre as flores buganvílias e as cúpulas azuis.",
   },
 
@@ -317,7 +317,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Lanchinho no aeroporto a caminho de Roma",
     price: 110,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=80",
     description: "Paninis e café na escala para a viagem mais esperada das nossas vidas.",
   },
 
@@ -334,10 +334,10 @@ export const WEDDING_GIFTS: GiftItem[] = [
   // 33.
   {
     id: "g-33",
-    title: "Jantar de frutos do mar no porto histórico de Mykonos",
+    title: "Jantar tradicional no porto histórico de Mykonos",
     price: 840,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKoiCtJZQutzXSNqKp_S4PuxkeoH78N-lrrgw7kB5i5A&s=10",
     description: "Mesa montada a passos do mar iluminado degustando polvos grelhados e peixes frescos.",
   },
 
@@ -347,7 +347,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Ingressos para o Panteão de Roma a dois",
     price: 125,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1542820229-081e0c12af0b?auto=format&fit=crop&w=800&q=80",
     description: "Contemplar a monumental cúpula aberta do templo mais preservado da Roma Antiga.",
   },
 
@@ -367,7 +367,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Cruzeiro privativo pelas Ilhas Gregas (Santorini a Mykonos)",
     price: 4500,
     category: "cotas",
-    image: "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=800&q=80",
     description: "Travessia náutica de luxo entre as ilhas com paradas em baías secretas e águas azul-turquesa.",
   },
 
@@ -377,7 +377,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Aluguel de espreguiçadeiras na praia de Santorini",
     price: 130,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
     description: "Guarda-sol e conforto para curtir o sol grego na praia de areia vulcânica de Perissa.",
   },
 
@@ -397,7 +397,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Aluguel de Fiat 500 conversível na Costa Amalfitana",
     price: 800,
     category: "experiencias",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCw46deGD1vJZsHdmsvze3TBbcxdAwzU4kqHcc9RdrSQ&s=10",
     description: "Percorrer a estrada mais bonita do mundo entre Positano, Amalfi e Ravello.",
   },
 
@@ -407,7 +407,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Garrafa de Limoncello artesanal de Sorrento",
     price: 135,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80",
     description: "O licor de limões sicilianos mais famoso da Itália para brindar à noite.",
   },
 
@@ -437,7 +437,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Passeio de catamarã ao pôr do sol em Oia com espumante",
     price: 790,
     category: "experiencias",
-    image: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFMVV2tYf_GSQdf6CGJTMRg6jBrUq9QYeh_C6LS0psWg&s=10",
     description: "Brinde a dois navegando diante das icônicas casinhas brancas com cúpulas azuis.",
   },
 
@@ -447,7 +447,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Ingressos para subir na cúpula da Basílica de São Pedro",
     price: 200,
     category: "experiencias",
-    image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+    image: "https://vatican.museum/images/w700-f1/storage/app/public/repository/i/y/iyae07dw.jpg",
     description: "Vista panorâmica espetacular de toda a cidade de Roma e da Praça de São Pedro.",
   },
 
@@ -457,7 +457,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Biscoitos cantucci toscanos com taça de Vin Santo",
     price: 155,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8iSA06yU7FQvbkzGK3L5DfxcJvCm60SoWMOWHwn_WQg&s=10",
     description: "A sobremesa mais clássica e acolhedora da região central da Itália.",
   },
 
@@ -487,7 +487,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Iogurte grego artesanal com mel de tomilho e nozes",
     price: 165,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1571212515416-fef01fc43637?auto=format&fit=crop&w=800&q=80",
     description: "Cremoso, refrescante e servido no café da manhã de frente para o mar Egeu.",
   },
 
@@ -537,7 +537,7 @@ export const WEDDING_GIFTS: GiftItem[] = [
     title: "Tábua de queijo pecorino, feta e azeitonas kalamata",
     price: 190,
     category: "lua-de-mel",
-    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1631379578550-7038263db699?auto=format&fit=crop&w=800&q=80",
     description: "Petisco mediterrâneo perfeito para acompanhar as tardes de sol no quarto ou na praia.",
   },
 
