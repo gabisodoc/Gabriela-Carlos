@@ -67,7 +67,32 @@ export const RsvpSection: React.FC = () => {
         message: message.trim(),
       };
 
-      // 1. Submit to Netlify Forms (works automatically when deployed on Netlify)
+      // 1. Submit to Google Sheets via Google Apps Script Web App
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbymE0Wwm00pUyF0CIkCorkGiCFoApJgjiB-Rg6DnQ7VbvKjEbM9sPmUNcR44NIMeKwy/exec';
+      try {
+        const payload = {
+          fullName: fullName.trim(),
+          attending: attending,
+          guestCount,
+          companionNames: formattedCompanions,
+          message: message.trim(),
+          timestamp: new Date().toISOString(),
+        };
+
+        // Envia via fetch com mode 'no-cors' para contornar redirecionamentos nativos do Google Script
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+          },
+          body: JSON.stringify(payload),
+        });
+      } catch (sheetsErr) {
+        console.warn('Erro ao salvar no Google Sheets:', sheetsErr);
+      }
+
+      // 2. Submit to Netlify Forms (backup e controle pelo painel do Netlify)
       try {
         await fetch('/', {
           method: 'POST',
@@ -78,7 +103,7 @@ export const RsvpSection: React.FC = () => {
         console.warn('Netlify form submission notice:', postErr);
       }
 
-      // 2. Also save locally in browser storage as backup
+      // 3. Also save locally in browser storage as backup
       const token = getAccessToken();
       const sheetId = getStoredSpreadsheetId();
 

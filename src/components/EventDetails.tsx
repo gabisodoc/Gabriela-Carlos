@@ -26,7 +26,7 @@ export const EventDetails: React.FC = () => {
         {/* Card Enclosure */}
         <div className="bg-white rounded-3xl border border-[#7F9078]/20 shadow-md p-6 sm:p-10 md:p-12">
           {/* 3 Metric Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6 divide-y md:divide-y-0 md:divide-x divide-[#7F9078]/15 pb-8 sm:pb-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6 pb-8 sm:pb-10">
             
             {/* 1. Data e Horário */}
             <div className="flex flex-col items-center justify-center text-center pt-4 md:pt-0">

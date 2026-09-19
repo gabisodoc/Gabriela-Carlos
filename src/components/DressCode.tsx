@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const DressCode: React.FC = () => {
+  // Estado para alternar entre "Elas" (0) e "Eles" (1) no mobile
+  const [mobileTab, setMobileTab] = useState<0 | 1>(0);
+
   return (
-    <section id="dress-code" className="py-20 sm:py-28 bg-white">
+    <section id="dress-code" className="py-20 sm:py-28 bg-white border-b border-[#7F9078]/20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-20">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <span className="font-serif tracking-[0.25em] text-xs uppercase text-[#DF806E] font-bold block mb-2">
             O QUE VESTIR
           </span>
@@ -14,16 +18,51 @@ export const DressCode: React.FC = () => {
             Dress Code
           </h2>
           <div className="w-12 h-[1px] bg-[#7F9078]/40 mx-auto mb-4" />
-          <p className="font-serif text-base sm:text-lg text-[#2B332A] font-light max-w-xl mx-auto">
-            <strong className="font-semibold text-[#3E483D]">Traje Esporte Fino.</strong> Pedimos gentilmente que evitem branco e verde menta.
+          <p className="font-serif text-lg sm:text-xl text-[#3E483D] font-normal max-w-xl mx-auto mb-6">
+            Traje Esporte Fino
           </p>
+
+          {/* Balão com mesma cor dos balões da programação do dia (bg-[#EAF2EC] border-[#7F9078]/25) */}
+          <div className="max-w-lg mx-auto bg-[#EAF2EC] border border-[#7F9078]/25 rounded-2xl py-3.5 px-6 shadow-xs text-center">
+            <p className="font-serif text-sm sm:text-base text-[#3E483D] font-normal tracking-wide leading-relaxed">
+              Pedimos gentilmente que não use BRANCO ou VERDE MENTA.
+            </p>
+          </div>
         </div>
 
-        {/* 2 Inspiration Cards: Lado a lado no tablet e computador (md:grid-cols-2) */}
+        {/* Mobile Navigation Controls: Passar para o lado (Elas / Eles) */}
+        <div className="flex md:hidden items-center justify-center gap-2.5 mb-6 max-w-[260px] mx-auto px-1">
+          <button
+            onClick={() => setMobileTab(0)}
+            className={`flex-1 py-1.5 px-4 rounded-full font-serif text-[11px] uppercase tracking-wider transition-all cursor-pointer border ${
+              mobileTab === 0
+                ? 'bg-[#505F4E] text-white border-[#505F4E] shadow-xs font-medium'
+                : 'bg-[#FAF7F0] text-[#505F4E] border-[#7F9078]/25 hover:bg-[#EAF2EC]'
+            }`}
+          >
+            Elas
+          </button>
+          <button
+            onClick={() => setMobileTab(1)}
+            className={`flex-1 py-1.5 px-4 rounded-full font-serif text-[11px] uppercase tracking-wider transition-all cursor-pointer border ${
+              mobileTab === 1
+                ? 'bg-[#505F4E] text-white border-[#505F4E] shadow-xs font-medium'
+                : 'bg-[#FAF7F0] text-[#505F4E] border-[#7F9078]/25 hover:bg-[#EAF2EC]'
+            }`}
+          >
+            Eles
+          </button>
+        </div>
+
+        {/* 2 Inspiration Cards: No mobile alterna com o slider/tabs, no tablet e desktop fica lado a lado (md:grid-cols-2) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           
           {/* Elas */}
-          <div className="bg-white rounded-3xl border border-[#7F9078]/20 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+          <div
+            className={`bg-white rounded-3xl border border-[#7F9078]/20 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-all duration-500 ${
+              mobileTab === 0 ? 'block' : 'hidden md:flex'
+            }`}
+          >
             {/* Imagem com altura padronizada para alinhamento uniforme */}
             <div className="w-full bg-white flex items-end justify-center p-2 sm:p-3 pb-0 h-64 sm:h-80 md:h-84 lg:h-96 xl:h-[420px]">
               <img
@@ -121,11 +160,27 @@ export const DressCode: React.FC = () => {
                 </div>
 
               </div>
+
+              {/* Mobile next/prev hint */}
+              <div className="mt-5 pt-3 border-t border-[#7F9078]/15 flex md:hidden items-center justify-between text-xs font-serif text-[#7F9078]">
+                <span>1 de 2 • Elas</span>
+                <button
+                  onClick={() => setMobileTab(1)}
+                  className="inline-flex items-center gap-1 text-[#3E483D] font-medium hover:text-[#7F9078] cursor-pointer"
+                >
+                  <span>Ver Eles</span>
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
           </div>
 
           {/* Eles */}
-          <div className="bg-white rounded-3xl border border-[#7F9078]/20 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+          <div
+            className={`bg-white rounded-3xl border border-[#7F9078]/20 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-all duration-500 ${
+              mobileTab === 1 ? 'block' : 'hidden md:flex'
+            }`}
+          >
             {/* Imagem com altura padronizada para alinhamento uniforme */}
             <div className="w-full bg-white flex items-end justify-center p-2 sm:p-3 pb-0 h-64 sm:h-80 md:h-84 lg:h-96 xl:h-[420px]">
               <img
@@ -223,6 +278,18 @@ export const DressCode: React.FC = () => {
                   </p>
                 </div>
 
+              </div>
+
+              {/* Mobile next/prev hint */}
+              <div className="mt-5 pt-3 border-t border-[#7F9078]/15 flex md:hidden items-center justify-between text-xs font-serif text-[#7F9078]">
+                <span>2 de 2 • Eles</span>
+                <button
+                  onClick={() => setMobileTab(0)}
+                  className="inline-flex items-center gap-1 text-[#3E483D] font-medium hover:text-[#7F9078] cursor-pointer"
+                >
+                  <ChevronLeft className="w-3.5 h-3.5" />
+                  <span>Ver Elas</span>
+                </button>
               </div>
             </div>
           </div>

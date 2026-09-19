@@ -92,7 +92,7 @@ export const WelcomeCountdown: React.FC = () => {
 
           {/* Seconds */}
           <div className="bg-[#EAF2EC] border border-[#7F9078]/25 rounded-2xl p-3 sm:p-4 text-center shadow-xs transition-transform hover:-translate-y-1 duration-300">
-            <span className="block font-serif text-2xl sm:text-3xl md:text-4xl font-normal text-[#DF806E] tracking-tight">
+            <span className="block font-serif text-2xl sm:text-3xl md:text-4xl font-normal text-[#3E483D] tracking-tight">
               {String(timeLeft.seconds).padStart(2, '0')}
             </span>
             <span className="block text-[9px] sm:text-[11px] font-serif tracking-[0.2em] uppercase text-[#7F9078] mt-1 font-semibold">
